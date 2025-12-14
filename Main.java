@@ -9,9 +9,11 @@ public class Main {
 		double purchase;
 		double minimum;
 		double max;
-		double totalSum; 
+		double totalSum;
+		double interestRate;
 		
 		totalSum = 0;
+		interestRate = 0.20;
 		count = 0;	
 			while (count < 5) {
 			purchase = scnr.nextDouble();
@@ -21,6 +23,7 @@ public class Main {
 			
 			System.out.println("Total:" + totalSum);
 			System.out.println("Average:"+ totalSum / 5);
+			System.out.println("Interest:" + totalSum * interestRate);
 		}
 		
 	}
