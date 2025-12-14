@@ -7,8 +7,8 @@ public class Main {
 		Scanner scnr = new Scanner(System.in);
 		int count;
 		double purchase;
-		double minimum;
-		double max;
+		double minimum = 0;
+		double max = 0;
 		double totalSum;
 		double interestRate;
 		
@@ -18,12 +18,26 @@ public class Main {
 			while (count < 5) {
 			purchase = scnr.nextDouble();
 			totalSum = totalSum + purchase;
+			if (count == 0) {
+				minimum = purchase;
+				max = purchase;
+			} else {
+				if (purchase < minimum) {
+					minimum = purchase;
+				}
+				if (purchase > max) {
+					max = purchase;
+				}
+			}	
 			count++;
 			}
 			
 			System.out.println("Total:" + totalSum);
 			System.out.println("Average:"+ totalSum / 5);
 			System.out.println("Interest:" + totalSum * interestRate);
+			System.out.println("Minimum:" + minimum);
+			System.out.println("Maximum:" + max);
+		
 		}
 		
 	}
